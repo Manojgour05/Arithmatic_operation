@@ -1,3 +1,4 @@
+
 #!/bin/sh
 echo "Arithmatic computation & sorting "
 echo "Read 3 numbers"
@@ -8,9 +9,15 @@ echo " $a $b $c"
 
 #compute a+b*c
  op1=$(($a+$b*$c))
+
 	#echo $op1
 
 #compute  a*b+c
 op2=$(($a*$b+$c))
 
-	echo $op2
+#	echo $op2
+
+# Compute c+a/b
+op3=$((($c+$a)/$b))
+	echo $op3
+
