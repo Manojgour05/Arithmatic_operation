@@ -32,4 +32,13 @@ declare -A operation
 	operation[op2]="$op2"
 	operation[op3]="$op3"
 	operation[op4]="$op4"
-	echo ${operation[@]}
+	echo "results in dictionary :${operation[@]}"
+# Store in array
+arr=()
+inx=0
+for i in  ${operation[@]}
+do
+	arr[inx]=$i
+     inx=$(($inx+1))
+done
+ echo "Array elements are: ${arr[@]}"
