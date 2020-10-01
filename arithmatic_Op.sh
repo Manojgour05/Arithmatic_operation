@@ -39,15 +39,15 @@ do
 	arr[inx]=$i
         inx=$(($inx+1))
 done
-	echo "Array elements are: ${arr[@]}"
 
+	echo "Array elements are: ${arr[@]}"
 
 # Computation Result in the Descending Order
 for (( i=0; i<${#arr[@]}; i++ ))
 do
 	for(( j=i+1; j<${#arr[@]}; j++ ))
 	do
-		if [[ arr[$i]<arr[$j] ]]
+		if (( arr[$i]<arr[$j] ))
 		then
 			temp=${arr[$i]}
 			arr[$i]=${arr[$j]}
@@ -55,4 +55,21 @@ do
 		fi
 	done
 done
-echo "Elements are sorted in descendingorder : ${arr[@]}"
+echo "Elements are sorted in descending order : ${arr[@]}"
+
+#---Computation Value in Ascending Order
+for (( i=0; i<${#arr[@]}; i++ ))
+do
+        for(( j=i+1; j<${#arr[@]}; j++ ))
+        do
+                if (( arr[$i]>arr[$j] ))
+                then
+                        temp=${arr[$i]}
+                        arr[$i]=${arr[$j]}
+                        arr[$j]=$temp
+                fi
+        done
+done
+echo "Elements are sorted in ascending order : ${arr[@]}"
+
+
